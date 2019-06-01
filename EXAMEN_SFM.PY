@@ -68,12 +68,12 @@ class Desk:
     #FUNCION PRIMER BOTÓN
     def funcion1(self):
     
-        if int(self.var1.get()) < int(self.var3.get()):
+        if int(self.var1.get()) < int(self.var3.get()) and int(self.var2.get())!=0:
             resultado1 = int(self.var1.get())* int(self.var2.get()) * int(self.var3.get())
             self.message['text'] = 'Se ha realizado una multiplicación de los 3 números. '+ 'Resultado: {}'.format(resultado1)
         else:    
 
-            if int(self.var1.get())== int(self.var3.get()):
+            if int(self.var1.get())== int(self.var3.get() ):
                 resultado1 = int(self.var1.get()) + int(self.var2.get()) + int(self.var3.get())
                 self.message['text'] = 'Se ha realizado una suma de los 3 números. '+ 'Resultado: {}'.format(resultado1)
             else:
@@ -88,13 +88,13 @@ class Desk:
     
     #funcion 2 concatenar los input                   
     def funcion2(self):
-
-        resultado1 = int(self.var1.get()) * int(self.var2.get()) + int(self.var3.get())
-    
+        mensaje=""
+        conca=str(self.var1.get()) + str(self.var2.get()) + str(self.var3.get())
+        resultado1 =( int(self.var1.get()) * int(self.var2.get())) + int(self.var3.get())
         #for para que imprima un mensaje por el numero del resultado anterior
         for i in range(resultado1):
-            self.message['text'] = 'Se ha concatenado los 3 números. '+ int(self.var1.get()) + int(self.var2.get()) + int(self.var3.get()
-            
+            mensaje=mensaje+conca
+        self.message['text'] = mensaje
 
 
 #validamos si estamos en la aplicación inicial
